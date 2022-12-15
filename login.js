@@ -1,5 +1,8 @@
 const { Router } = require('express')
 const router = Router()
+const session = require('express-session')
+const User = require('./Schema')
+
 
 router.post('/login',async (req,res)=>{
     const {username,password,email}=req.body;
