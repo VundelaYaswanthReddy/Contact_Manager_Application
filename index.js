@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express=require('express');
 const bodyparser=require('body-parser');
 const nodemailer=require('nodemailer');
@@ -19,6 +20,26 @@ otp=JSON.stringify(otp)
 // body parser middleware
 app.use(bodyparser.urlencoded({extended : false}));
 app.use(bodyparser.json());
+=======
+const express  = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const Signup = require('./Signup')
+const Login = require('./login')
+const Session = require('express-session')
+
+
+
+app.use(express.json())
+app.use(express.urlencoded())
+app.use('Session({
+        resave : true,
+        saveUninitialized: true,
+        secret: 'bla bla bla'
+        }))
+app.use(Signup)
+app.use(Login)
+>>>>>>> 9f3dc84e43b66f515ed4f94facae8e75b86bad5b
 
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb+srv://m001-student:m001-mongodb-basics@sandbox.nucrbbe.mongodb.net/?retryWrites=true')
@@ -26,6 +47,7 @@ mongoose.connect('mongodb+srv://m001-student:m001-mongodb-basics@sandbox.nucrbbe
 .catch((err)=> console.log('Unable to connect to db'))
 
 
+<<<<<<< HEAD
 
 let transporter = nodemailer.createTransport({
     host: "vundelayaswanthreddy@gmail.com",
@@ -58,6 +80,8 @@ app.post('/sendmail',(req,res)=>{
     });
     res.send(201);
 });
+=======
+>>>>>>> 9f3dc84e43b66f515ed4f94facae8e75b86bad5b
 
 app.post('/verify',(req,res)=>{
     user_otp=req.body.otp
@@ -70,6 +94,7 @@ app.post('/verify',(req,res)=>{
     res.send(201);
 }); 
 
+<<<<<<< HEAD
 app.post('/resend',(req,res)=>{
     resend_otp=Math.random();
     resend_otp=resend_otp*1000000;
@@ -109,3 +134,8 @@ app.post('/verify_resend',(req,res)=>{
 app.listen(port,()=>{
     console.log('app is running in the port : ',port);
 })
+=======
+app.listen(port,()=>{
+    console.log("App is running on our port : ",port)
+})
+>>>>>>> 9f3dc84e43b66f515ed4f94facae8e75b86bad5b
