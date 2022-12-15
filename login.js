@@ -1,3 +1,6 @@
+const { Router } = require('express')
+const router = Router()
+
 router.post('/login',async (req,res)=>{
     const {username,password,email}=req.body;
     const userDB= await User.findOne({ $and: [{password},{ email }] });
@@ -12,3 +15,5 @@ router.post('/login',async (req,res)=>{
    
 
 });
+
+module.exports = router
