@@ -1,0 +1,16 @@
+Project : Contact Manager Application
+
+This application includes => Register User  => Post
+                          => Login User     => Post
+                          => Current User   => Get
+                             ->Fetch the current user information
+
+..=> When user Registers and login => JWT token is generated and can be able to do the following actions to maintain their contacts
+                                  => Users can Get,Create,Update,Delete the contacts (CRUD)
+
+
+This application includes => Create contact        => Post
+                          => Update Contact        => Post
+                          => Delete contact        => Post
+                          => Get Contact           => Get 
+                          => Get contact using id  => Get
